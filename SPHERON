@@ -1,0 +1,13 @@
+docker run -dit \
+--name ubuntu_container_2 \
+--net my_custom_network \
+--ip 192.168.1.102 \
+-p 5023:22 \
+-e http_proxy=http://tradegenius000:u8Aa2erEGz@115.167.65.176:50100 \
+-e https_proxy=http://tradegenius000:u8Aa2erEGz@115.167.65.176:50100 \
+-e DISPLAY=$DISPLAY \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+ubuntu:20.04
+
+apt update
+apt install -y x11-apps
